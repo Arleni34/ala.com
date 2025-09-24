@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up / Log In Example</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .form-container { margin-top: 20px; }
+    .hidden { display: none; }
+    .game-area { margin-top: 30px; }
+    button { margin: 5px; padding: 8px 16px; }
+    input { margin: 4px 0; padding: 6px; width: 200px; }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <h2>Welcome!</h2>
+  <button onclick="showSignUp()">Sign Up</button>
+  <button onclick="showLogIn()">Log In</button>
+
+  <div id="signup-form" class="form-container hidden">
+    <h3>Sign Up</h3>
+    <input id="signup-username" placeholder="Username" required /><br>
+    <input id="signup-password" type="password" placeholder="Password" required /><br>
+    <button onclick="submitSignUp()">Submit</button>
+    <div id="signup-message"></div>
+  </div>
+
+  <div id="login-form" class="form-container hidden">
+    <h3>Log In</h3>
+    <input id="login-username" placeholder="Username" required /><br>
+    <input id="login-password" type="password" placeholder="Password" required /><br>
+    <button onclick="submitLogIn()">Submit</button>
+    <div id="login-message"></div>
+  </div>
+
+  <div id="game-area" class="game-area hidden">
+    <h3>Welcome to the Game!</h3>
+    <!-- Replace 'game-image.png' with your actual image filename -->
+    <img src="game-image.png" alt="Game Picture" />
+    <p>Enjoy your adventure!</p>
+  </div>
+
+  <script>
+    function showSignUp() {
+      document.getElementById('signup-form').classList.remove('hidden');
+      document.getElementById('login-form').classList.add('hidden');
+      document.getElementById('game-area').classList.add('hidden');
+     
